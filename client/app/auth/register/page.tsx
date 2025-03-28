@@ -11,7 +11,7 @@ export default function register() {
         <input type='text' placeholder='Password' className='border p-3 rounded-lg' id='password' />
         <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>Register</button>
       </form>
-      <div className='flex justify-center p-3 gap-3'>Have an account?
+      <div className='flex justify-center gap-3 mt-5'>Have an account?
         <Link href='/login'>
         <span className='text-blue-700'>Login</span>
         </Link>
