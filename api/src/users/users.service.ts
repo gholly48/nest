@@ -17,9 +17,14 @@ export class UsersService {
         return this.prisma.users.findUnique({ where: { id } });
       }
     
-      async create(user: { id: number; username: string; email: string; password: string }) {
+      async create(user: {username: string; email: string; password: string }) {
         const hashedPass = Bcrypt.hashSync(user.password, 10)
-        const newUser = this.prisma.users.create({ data: { ...user, password: hashedPass} });
+        const newUser = await this.prisma.users.create({ data: { ...user, password: hashedPass} });
+
+        if (!newUser) {
+           console.log('Error');
+           }
+        console.log('User Created');   
         return newUser
       }
     
